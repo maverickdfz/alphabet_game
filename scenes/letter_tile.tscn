@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqs3oa42luiv3"]
+
+[ext_resource type="Texture2D" uid="uid://d3v8uyt8cvwq3" path="res://icon.svg" id="1_1471b"]
+[ext_resource type="Script" path="res://scripts/letter_tile.gd" id="2_ff27f"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_1471b")
+script = ExtResource("2_ff27f")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 120
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="." to="." method="_on_tile_pressed"]
